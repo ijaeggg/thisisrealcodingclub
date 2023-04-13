@@ -1,0 +1,60 @@
+class WarvHouse:
+		# 클래스 변수
+		# 예 : 연봉인상률, 재고수
+		stock_num = 0.05
+		def__init__(self, name)
+				self.name = name
+				WarvHouse.stock_num += 1 # 공통창고 하나당 재고 하나
+		def__del__(self):
+				WarvHouse.stock_num -= 1
+
+user1 = WarvHouse('Kim')
+user2 = WarvHouse('Park')
+user3 = WarvHouse('Lee')
+
+print(user1.__dict__) # user1의 딕셔너리 값을 출력
+print(user2.__dict__)
+print(user3.__dict__)
+print(WarvHouse.__dict__)
+
+print(user3.stock_num) #stock_num 기본적으로 모든 연봉 수를 출력해주기 때문에, class로 찾아들어간다.
+del user1
+print(user3.stock_num)
+
+try:
+    class WareHouse:
+        # 클래스 변수
+        # 예: 연봉인상율
+        stock_nub = 0
+        def __init__(self, name):
+            self.name = name
+            WareHouse.stock_nub += 1 #공통 창고 하나당 재고 하나
+        def __del__(self):
+            WareHouse.stock_nub -= 1
+        def user_stock_nub(self):
+            print("hello: ", WareHouse.stock_nub)
+        def user_Info_mation(self):
+            print('nasty boy: ', self.name)
+
+    print('------------------------')
+    user4 = WareHouse('Minister')
+    user4.user_Info_mation()
+    user5 = WareHouse('LustBoy')
+    user5.user_Info_mation()
+    user6 = WareHouse('CallMeFather')
+    user6.user_Info_mation()
+    user5.user_stock_nub() #어차피 클래스 전체의 재고의 수로 찾아낸다.
+    print('------------------------')
+
+except ValueError:
+    print('You are Wrong!')
+except SyntaxError:
+    print('Your Syntax is Wrong anyway!')
+except IndexError:
+    print('fuck you anyway')
+except Exception:
+    print('Hi')
+else:
+    print('Hello Python!')
+
+print('77777777777777777777777777777777777777777777777777777777')
